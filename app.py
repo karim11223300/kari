@@ -22,7 +22,7 @@ G = '\033[1;32m'
 R = '\033[1;31m'
 id = "761058551"
 
-token = "6635344625:AAHzJNXx4JGeYPpQs2IeQ38rWlueQFCK6zQ"
+token = "7003770029:AAEyHGkhxN9WsY-xjMVPheI1-_k4QC8k6Dk"
 bot = telebot.TeleBot(token)
 
 
@@ -72,15 +72,14 @@ def create():
 def send_results_periodically():
     global created
     global failed
-    
 
-executor=concurrent.futures.ThreadPoolExecutor(max_workers=800)
+executor=concurrent.futures.ThreadPoolExecutor(max_workers=250)
 executor.submit(send_results_periodically)
 
 
 while True:
  executor.submit(create)
- os.system('cls')
+ os.system('clear')
  print(C+"Make free account for safeUm app ")
  print(G+'Created : '+str(created))
  print(R+'Failed : '+str(failed))
